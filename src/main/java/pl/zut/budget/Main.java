@@ -1,5 +1,7 @@
 package pl.zut.budget;
 
+import java.math.BigDecimal;
+
 /**
  * Punkt startowy projektu. Na razie transakcje są trzymane jako napisy w tablicy.
  * Na LB02 zastąpisz to klasami z pakietu {@code model}.
@@ -61,6 +63,14 @@ public class Main {
 
     private static void sum() {
         // TODO policz sumę kwot (uwaga: przecinek jako separator dziesiętny)
-        IO.println("TODO");
+        BigDecimal suma = BigDecimal.ZERO;
+
+        for (int i = 0; i < count; i++){
+            String[] pola = transactions[i].split(";");
+            String kwota = pola[1];
+            BigDecimal wartosc = new BigDecimal(kwota.replace(',','.'));
+            suma = suma.add(wartosc);
+        }
+        IO.println("Suma: "+ suma);
     }
 }
