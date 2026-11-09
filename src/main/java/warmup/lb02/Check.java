@@ -19,7 +19,7 @@ public class Check {
 
         for (String entry : entries) {
             String shop = entry.split(";")[2];
-            IO.println(shop + " -> " + Categories.categoryOf(shop));
+             IO.println(shop + " -> " + Categories.categoryOf(shop));
         }
     }
 }
